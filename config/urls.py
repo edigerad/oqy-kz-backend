@@ -18,10 +18,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.utils.translation import ugettext_lazy as _
+from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
+                  path('api/v0/', include('rest_auth.urls')),
                   path('i18n/', include('django.conf.urls.i18n')),
+                  path('api/docs/',
+                       include_docs_urls(title='Oqy.kz documentation',
+                                         authentication_classes=[],
+                                         permission_classes=[])),
               ] + static(settings.MEDIA_URL,
                          document_root=settings.MEDIA_ROOT)
 

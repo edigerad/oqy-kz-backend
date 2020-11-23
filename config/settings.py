@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import environ
+import datetime
 from pathlib import Path
 from django.utils.translation import ugettext_lazy as _
 
@@ -38,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_auth',
+    'rest_framework',
+    'rest_framework.authtoken',
 
     'app.users',
 ]
@@ -150,3 +155,33 @@ ACCOUNT_SYMBOLS_REGEX = """!"#$%&()*+,/:;<=>?@[\\]^_{|}~0-9"""  # all symbols ex
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = 'users.User'
 
+# REST FRAMEWORK CONFIGURATION
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+
+}
+
+CORS_ORIGIN_WHITELIST = ("http://oqy.kz",)
+CORS_ALLOW_CREDENTIALS = True
+
+# Rest auth settings
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'LOGIN_SERIALIZER': 'rest_auth.serializers.LoginSerializer',
+}
+
+REST_USE_JWT = True
+
+JWT_AUTH = {
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=14),
+}
