@@ -15,11 +15,11 @@ NAME_REGEX = RegexValidator(regex='^[^{}]'.format(settings.ACCOUNT_SYMBOLS_REGEX
 
 
 class User(AbstractUser):
-    phone_number = CharField(_('Phone number'), validators=[PHONE_REGEX], max_length=11, db_index=True, unique=True)
     fullname = CharField(_("Full name"), validators=[NAME_REGEX], max_length=70)
     avatar = ImageField(_('Avatar'), null=True, blank=True)
     email = EmailField(_('Email address'), blank=True, null=True)
     email_verified = BooleanField(_('Email verified'), default=False)
+    phone_number = CharField(_('Phone number'), validators=[PHONE_REGEX], max_length=11, blank=True, null=True)
     verified_at = models.DateTimeField(_('Verified at'), blank=True, null=True)
 
     class Meta:

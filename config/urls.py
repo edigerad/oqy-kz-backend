@@ -23,6 +23,7 @@ from rest_framework.documentation import include_docs_urls
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('api/v0/', include('rest_auth.urls')),
+                  path('api/v0/registration/', include('rest_auth.registration.urls')),
                   path('i18n/', include('django.conf.urls.i18n')),
                   path('api/docs/',
                        include_docs_urls(title='Oqy.kz documentation',

@@ -37,12 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
     'rest_auth',
     'rest_framework',
     'rest_framework.authtoken',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'app.users',
 ]
@@ -121,6 +125,10 @@ LANGUAGES = (
     ('en', _('English')),
     ('kk', _('Kazakh')),
 )
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#site-id
+SITE_ID = 1
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -149,8 +157,19 @@ LOCALE_PATHS = (
 
 ACCOUNT_PHONE_REGEX = "77\d{9}$"
 ACCOUNT_PHONE_REGEX_MESSAGE = "Phone number must be entered in the format: '+77999999999'. Up to 11 digits allowed."
-# ACCOUNT_USER_MODEL_USERNAME_FIELD = "phone_number"
 ACCOUNT_SYMBOLS_REGEX = """!"#$%&()*+,/:;<=>?@[\\]^_{|}~0-9"""  # all symbols except " .`'-"
+
+# Some really nice defaults
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
+ACCOUNT_USERNAME_BLACKLIST = []
+# ACCOUNT_PRESERVE_USERNAME_CASING = False
+
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = 'users.User'
@@ -185,3 +204,16 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=14),
 }
+
+
+# EMAIL
+# ------------------------------------------------------------------------------
+# # https://docs.djangoproject.com/en/dev/ref/settings/#email-host
+# # https://docs.djangoproject.com/en/dev/ref/settings/#email-port
+# send message
+EMAIL_SUBJECT = 'IT course platform - "oqy.kz" '
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'oqy.team@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
