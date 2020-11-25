@@ -26,7 +26,7 @@ urlpatterns = [
                   path('api/v0/registration/', include('rest_auth.registration.urls')),
                   path('i18n/', include('django.conf.urls.i18n')),
                   path('api/docs/',
-                       include_docs_urls(title='Oqy.kz documentation',
+                       include_docs_urls(title='Oqy.kz API documentation',
                                          authentication_classes=[],
                                          permission_classes=[])),
               ] + static(settings.MEDIA_URL,

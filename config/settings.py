@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'corsheaders',
 
     'app.users',
 ]
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -189,8 +191,12 @@ REST_FRAMEWORK = {
 
 }
 
-CORS_ORIGIN_WHITELIST = ("http://oqy.kz",)
+# cors-origin
+# ------------------------------------------------------------------------------
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = ('http://localhost:3000',
+                         "http://oqy.kz",)
 
 # Rest auth settings
 
@@ -204,7 +210,6 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=14),
 }
-
 
 # EMAIL
 # ------------------------------------------------------------------------------
