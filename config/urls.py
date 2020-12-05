@@ -20,10 +20,21 @@ from django.conf.urls.static import static
 from django.utils.translation import ugettext_lazy as _
 from rest_framework.documentation import include_docs_urls
 
+from app.courses.api import views as course_views
+
 urlpatterns = [
+                  path('ckeditor/', include('ckeditor_uploader.urls')),
                   path('admin/', admin.site.urls),
+
+
                   path('api/v0/', include('rest_auth.urls')),
                   path('api/v0/registration/', include('rest_auth.registration.urls')),
+                  path('api/v0/categories/', course_views.CategoryListView.as_view()),
+                  path('api/v0/categories/<int:pk>/', course_views.CategoryDetailView.as_view()),
+                  path('api/v0/courses/', course_views.CourseListView.as_view()),
+                  path('api/v0/courses/<int:pk>/', course_views.CategoryDetailView.as_view()),
+
+                  path('api/v0/users/', include('app.users.api.urls')),
                   path('i18n/', include('django.conf.urls.i18n')),
                   path('api/docs/',
                        include_docs_urls(title='Oqy.kz API documentation',

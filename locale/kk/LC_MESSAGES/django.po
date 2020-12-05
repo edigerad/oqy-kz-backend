@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-23 13:39+0000\n"
+"POT-Creation-Date: 2020-12-05 06:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: app/common/models.py:13 config/settings.py:131
+msgid "English"
+msgstr "Ағылшынша"
+
+#: app/common/models.py:14
+msgid "Russian"
+msgstr ""
+
+#: app/common/models.py:15 config/settings.py:132
+msgid "Kazakh"
+msgstr "Қазақша"
+
+#: app/common/models.py:33
+msgid "Language"
+msgstr ""
+
+#: app/common/models.py:41
+msgid "Created"
+msgstr ""
+
+#: app/common/models.py:42
+msgid "Modified"
+msgstr ""
+
+#: app/common/models.py:66
+msgid "Is active?"
+msgstr ""
+
+#: app/common/models.py:84
+msgid "Title"
+msgstr ""
+
+#: app/common/models.py:95
+msgid "Text"
+msgstr ""
+
+#: app/common/models.py:106
+msgid "Description"
+msgstr ""
+
+#: app/courses/models.py:11
+msgid "category"
+msgstr ""
+
+#: app/courses/models.py:12
+msgid "categories"
+msgstr ""
+
+#: app/courses/models.py:20
+msgid "Category"
+msgstr ""
+
+#: app/courses/models.py:22
+msgid "Teacher"
+msgstr ""
+
+#: app/courses/models.py:23
+msgid "Requirements"
+msgstr ""
+
+#: app/courses/models.py:31
+msgid "Cover image"
+msgstr ""
+
+#: app/courses/models.py:33
+msgid "Registration count"
+msgstr ""
+
+#: app/courses/models.py:36
+msgid "course"
+msgstr ""
+
+#: app/courses/models.py:37
+msgid "courses"
+msgstr ""
+
+#: app/courses/models.py:58
+msgid "Order"
+msgstr ""
+
+#: app/courses/models.py:59 app/courses/models.py:70
+msgid "Course"
+msgstr ""
+
+#: app/courses/models.py:60
+msgid "Content"
+msgstr ""
+
+#: app/courses/models.py:63 app/courses/models.py:64
+msgid "Chapter"
+msgstr ""
+
+#: app/courses/models.py:71
+msgid "Registered"
+msgstr ""
+
+#: app/courses/models.py:72
+msgid "Is active"
+msgstr ""
+
+#: app/courses/models.py:73
+msgid "Is finished"
+msgstr ""
+
+#: app/courses/models.py:76
+msgid "course progress"
+msgstr ""
+
+#: app/courses/models.py:77
+msgid "course progresses"
+msgstr ""
 
 #: app/templates/admin/base.html:39
 msgid "Welcome,"
@@ -51,23 +163,23 @@ msgid "Name is not correct!"
 msgstr ""
 
 #: app/users/models.py:18
-msgid "Phone number"
-msgstr ""
-
-#: app/users/models.py:19
 msgid "Full name"
 msgstr ""
 
-#: app/users/models.py:20
+#: app/users/models.py:19
 msgid "Avatar"
 msgstr ""
 
-#: app/users/models.py:21
+#: app/users/models.py:20
 msgid "Email address"
 msgstr ""
 
-#: app/users/models.py:22
+#: app/users/models.py:21
 msgid "Email verified"
+msgstr ""
+
+#: app/users/models.py:22
+msgid "Phone number"
 msgstr ""
 
 #: app/users/models.py:23
@@ -82,22 +194,14 @@ msgstr "Қолданушы"
 msgid "Users"
 msgstr "Қолданушылар"
 
-#: config/settings.py:116
-msgid "English"
-msgstr "Ағылшынша"
-
-#: config/settings.py:117
-msgid "Kazakh"
-msgstr "Қазақша"
-
-#: config/urls.py:28
+#: config/urls.py:46
 msgid "Oqy.kz Admin"
 msgstr "Oqy.kz Админ"
 
-#: config/urls.py:29
+#: config/urls.py:47
 msgid "Oqy.kz Admin Portal"
 msgstr "Oqy.kz Админ Порталы"
 
-#: config/urls.py:30
+#: config/urls.py:48
 msgid "Welcome to Oqy.kz Portal"
 msgstr "Oqy.kz порталына қош келдіңіз"

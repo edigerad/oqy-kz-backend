@@ -49,6 +49,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'corsheaders',
 
+    'ckeditor',
+    'ckeditor_uploader',
+
+    'app.courses',
     'app.users',
 ]
 
@@ -222,3 +226,21 @@ EMAIL_HOST_USER = 'oqy.team@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# CKEditor SETTINGS
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'none',
+        'extraPlugins': ','.join(
+            ['codesnippet',
+             'uploadimage',
+             'uploadwidget',
+             'widget',
+             'dialog', ]),
+        'allowedContent': True,
+        'width': '100%'
+    },
+}
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
